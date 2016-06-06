@@ -1,12 +1,16 @@
 
 package examenfinalparte2;
+/**
+ * Clase en la cual se va a crear un contador, y nos muestre por pantalla los números seleccionados.
+ * @author Pablite5
+ */
+
 
 public class Principal {
 
     public static boolean p = false;
     
-    public static void main(String arg[])
-        {
+    public static void main(String arg[]){
         int dig=2;
         int ndig=0;
         if(dig<=0)
