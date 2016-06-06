@@ -14,26 +14,38 @@ public class Principal {
     public static boolean p = false;
     
     public static void main(String arg[]){
-        
+        /**
+         * Aqui pedimos por pantalla que ingresemos el numero de digitos que queremos que se nos muestre.
+         * @param ndig es igual a 0 para que nos empiece a contar desde 0
+         */
         
         int dig= Integer.parseInt(JOptionPane.showInputDialog("Ingrese como parámetro, un numero de digitos correcto (mayor que 0): "));
         int ndig=0;
         
         
+     /**
+      * Si el dígito es mayor que 0 se procede a funcionar el bucle, si se pone cero no iniciará el bucle.
+      */
+        
         if(dig<=0)
         System.out.println("Ingrese como parámetro, un numero de digitos correcto (mayor que 0): ");
+        
+        /**
+         * Se crea un for para recorrer el bucle.
+         * @param aux es un parámetro que se iguala a i para que sea distinto de cero.
+         */
         for(int i = 1; i <= 99999; i++ )
         {
             int aux = i;
  
             int contador=0;
  
-            while (aux != 0)
-        {
+            while (aux != 0){
             aux = aux / 10;
             contador++;
         }
-        ndig=contador;
+        
+            ndig=contador;
             
             
             if(ndig==dig){
