@@ -49,6 +49,7 @@ public class Principal {
          * Aquí el bucle decirirá si mostrarlo luego o no.
          * Si es igual a true se mostrará.
          * Si es igual a false no se mostrará nada.
+         * Realizá las cuentas y finalmente las muestra
          */
             ndig=contador;
             
