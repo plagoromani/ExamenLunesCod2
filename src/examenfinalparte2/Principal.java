@@ -11,7 +11,7 @@ import javax.swing.JOptionPane;
 
 public class Principal {
 
-    public static boolean p = false;
+    public static boolean nprimo = false;
     
     public static void main(String arg[]){
         /**
@@ -19,29 +19,30 @@ public class Principal {
          * @param ndig es igual a 0 para que no tome otro valor.
          */
         
-        int dig= Integer.parseInt(JOptionPane.showInputDialog("Ingrese como parámetro, un numero de digitos correcto (mayor que 0): "));
-        int ndig=0;
+        int digito= Integer.parseInt(JOptionPane.showInputDialog("Ingrese como parámetro, un numero de digitos correcto (mayor que 0): "));
+        int numerodigito;
         
         
      /**
       * Si el dígito es mayor que 0 se procede a funcionar el bucle, si se pone cero no iniciará el bucle.
       */
         
-        if(dig<=0)
+        if(digito<=0)
         System.out.println("Ingrese como parámetro, un numero de digitos correcto (mayor que 0): ");
         
         /**
          * Se crea un for para recorrer el bucle.
-         * @param aux es un parámetro que tenemos que crear, ya que si fuese i el resultado sería distinto
+         * @param x es un parámetro que tenemos que crear, ya que si fuese numeroComprobar el resultado sería distinto
          */
-        for(int i = 1; i <= 99999; i++ )
+        for(int numeroComprobar = 1; numeroComprobar <= 99999; numeroComprobar++ )
         {
-            int aux = i;
+            //renombramos la variable aux a x, para que sepamos que x va a ser un número cualquiera, que vamos a comprobar si es primo o no.
+            int x = numeroComprobar;
  
             int contador=0;
  
-            while (aux != 0){
-            aux = aux / 10;
+            while (x != 0){
+            x = x / 10;
             contador++;
         }
         /**
@@ -50,37 +51,39 @@ public class Principal {
          * Si es igual a true se mostrará.
          * Si es igual a false no se mostrará nada.
          * Realizá las cuentas y finalmente las muestra
+         * Creamos el segundo contador
+         * Renombramos las variables para dar más sentido al programa.
          */
-            ndig=contador;
+            numerodigito=contador;
             
             
-            if(ndig==dig){
-                   if (i < 4) p = true;
+            if(numerodigito==digito){
+                   if (numeroComprobar < 4) nprimo = true;
             else
             {
-            if (i % 2 == 0) p = false; 
+            if (numeroComprobar % 2 == 0) nprimo = false; 
                 else
                 {
-                    int contador1 = 0;  
-                    int i1 = 1; 
-                    int k = (i - 1) / 2; 
-                    if  (k % 2 == 0) k--;  
+                    int contador2 = 0;  
+                    int numerop = 1; 
+                    int numeronuevo = (numeroComprobar - 1) / 2; 
+                    if  (numeronuevo % 2 == 0) numeronuevo--;  
              
-                    while(i1 <= k)
+                    while(numerop <= numeronuevo)
                     {
-                        if (i % i1 == 0) contador1++;
-                            i1 += 2;
-                            if (contador1 == 2) i1 = k + 1;
+                        if (numeroComprobar % numerop == 0) contador2++;
+                            numerop += 2;
+                            if (contador2 == 2) numerop = numeronuevo + 1;
                     }
- 
-        if (contador1 == 1) p = true;
+
+        if (contador2 == 1)nprimo = true;
             } 
         } 
      /**
       * Aquí se mostrará si el resultado es igual a true.
       */
-                if (p == true) 
-                    System.out.println(i);    
+                if (nprimo == true) 
+                    System.out.println(numeroComprobar);    
             }
         }
         }
